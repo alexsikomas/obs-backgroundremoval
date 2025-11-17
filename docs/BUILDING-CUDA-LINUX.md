@@ -66,7 +66,7 @@ The build script needs to know where your CUDA and TensorRT installations are lo
 ### Build ONNXRuntime
 Now you can run the build script. Replace the placeholder values in brackets `[]` with the paths and architecture version you found in the previous steps.
 ```bash
-./build.sh --config Release --build_shared_lib --parallel \
+./build.sh --config Release --build_shared_lib --use_vcpkg --parallel \
 --use_cuda --cuda_home [YOUR_CUDA_PATH] --cudnn_home [YOUR_CUDA_PATH] \
 --use_tensorrt --tensorrt_home [YOUR_TENSORRT_PATH] \
 --cmake_extra_defines CMAKE_CUDA_ARCHITECTURES=[YOUR_ARCH_VERSION] CMAKE_POSITION_INDEPENDENT_CODE=ON onnxruntime_BUILD_UNIT_TESTS=OFF
@@ -74,7 +74,7 @@ Now you can run the build script. Replace the placeholder values in brackets `[]
 
 Example for an RTX 3060:
 ```bash
-./build.sh --config Release --build_shared_lib --parallel \
+./build.sh --config Release --build_shared_lib --use_vcpkg --parallel \
 --use_cuda --cuda_home /opt/cuda --cudnn_home /opt/cuda \
 --use_tensorrt --tensorrt_home /usr \
 --cmake_extra_defines CMAKE_CUDA_ARCHITECTURES=86 CMAKE_POSITION_INDEPENDENT_CODE=ON onnxruntime_BUILD_UNIT_TESTS=OFF
