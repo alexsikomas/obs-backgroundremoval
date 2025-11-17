@@ -69,8 +69,7 @@ Now you can run the build script. Replace the placeholder values in brackets `[]
 ./build.sh --config Release --build_shared_lib --parallel \
 --use_cuda --cuda_home [YOUR_CUDA_PATH] --cudnn_home [YOUR_CUDA_PATH] \
 --use_tensorrt --tensorrt_home [YOUR_TENSORRT_PATH] \
---cmake_extra_defines CMAKE_CUDA_ARCHITECTURES=[YOUR_ARCH_VERSION] CMAKE_POSITION_INDEPENDENT_CODE=ON \
---disable_unit_tests
+--cmake_extra_defines CMAKE_CUDA_ARCHITECTURES=[YOUR_ARCH_VERSION] CMAKE_POSITION_INDEPENDENT_CODE=ON onnxruntime_BUILD_UNIT_TESTS=OFF
 ```
 
 Example for an RTX 3060:
@@ -78,8 +77,7 @@ Example for an RTX 3060:
 ./build.sh --config Release --build_shared_lib --parallel \
 --use_cuda --cuda_home /opt/cuda --cudnn_home /opt/cuda \
 --use_tensorrt --tensorrt_home /usr \
---cmake_extra_defines CMAKE_CUDA_ARCHITECTURES=86 CMAKE_POSITION_INDEPENDENT_CODE=ON \
---disable_unit_tests
+--cmake_extra_defines CMAKE_CUDA_ARCHITECTURES=86 CMAKE_POSITION_INDEPENDENT_CODE=ON onnxruntime_BUILD_UNIT_TESTS=OFF
 ```
 
 This process can take a significant amount of time depending on your computer.
